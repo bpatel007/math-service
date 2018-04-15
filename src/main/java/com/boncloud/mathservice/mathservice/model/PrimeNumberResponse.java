@@ -2,8 +2,11 @@ package com.boncloud.mathservice.mathservice.model;
 
 import java.util.List;
 
+import javax.xml.bind.annotation.XmlRootElement;
+
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+@XmlRootElement
 public class PrimeNumberResponse {
 	
 	@JsonProperty(value="Initials")
