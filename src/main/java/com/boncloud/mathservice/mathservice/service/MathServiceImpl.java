@@ -20,7 +20,7 @@ public class MathServiceImpl implements MathService {
 	@Override
 	public List<Integer> findPrimeNumbers(int maxNumber) {
 		logger.debug("finding prime numbes untill :" + maxNumber);
-		return IntStream.range(2, maxNumber).filter(n -> isPrime(n)).boxed().collect(Collectors.toList());
+		return IntStream.rangeClosed(2, maxNumber).filter(n -> isPrime(n)).boxed().collect(Collectors.toList());
 	}
 
 	/**
