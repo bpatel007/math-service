@@ -25,12 +25,13 @@ public class MathServiceImpl implements MathService {
 
 	/**
 	 * find given number is prime number or not.
-	 * @param maxNumber
+	 * @param number
 	 * @return true if given number is prime, else return false
 	 */
-	private boolean isPrime(int maxNumber) {
-		return maxNumber > 1 &&
-				IntStream.range(2, maxNumber).noneMatch(n -> maxNumber % n == 0);
+	@Override
+	public boolean isPrime(int number) {
+		return number > 1 &&
+				IntStream.range(2, number).noneMatch(n -> number % n == 0);
 	}
 
 }

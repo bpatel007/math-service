@@ -14,4 +14,11 @@ public interface MathService {
 	 */
 	List<Integer> findPrimeNumbers(int maxNumber);
 
+	/**
+	 * Find is supplied number is prime or not
+	 * @param number
+	 * @return true if supplied number is prime else this method will return false
+	 */
+	boolean isPrime(int number);
+
 }

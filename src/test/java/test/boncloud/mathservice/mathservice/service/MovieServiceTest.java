@@ -1,7 +1,9 @@
 package test.boncloud.mathservice.mathservice.service;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertTrue;
 
 import java.util.Arrays;
 import java.util.List;
@@ -48,6 +50,7 @@ public class MovieServiceTest {
 
 		List<Integer> result1 = Arrays.asList(2, 3, 5, 7);
 		List<Integer> result2 = Arrays.asList(2, 3, 5, 7, 11, 13);
+		List<Integer> result3 = Arrays.asList(2, 3, 5, 7, 11, 13,17,19);
 
 		List<Integer> resultStream1 = mathService.findPrimeNumbers(10);
 		assertNotNull("Result stream is null", resultStream1);
@@ -56,10 +59,23 @@ public class MovieServiceTest {
 		List<Integer> resultStream2 = mathService.findPrimeNumbers(15);
 		assertNotNull("Result stream is null", resultStream2);
 		assertEquals("Incorrect result", result2, resultStream2);
+		
+		List<Integer> resultStream3 = mathService.findPrimeNumbers(19);
+		assertNotNull("Result stream is null", resultStream3);
+		assertEquals("Incorrect result", result3, resultStream3);
 	}
 	
+	@Test
 	public void testIsPrime() {
-		
+	  assertTrue("Incorrect prime number 2", mathService.isPrime(2));
+	  assertTrue("Incorrect prime number 5 ", mathService.isPrime(5));
+	  assertTrue("Incorrect prime number 19", mathService.isPrime(19));
+	  
+	  assertFalse("Incorrect result", mathService.isPrime(1));
+	  assertFalse("Incorrect result", mathService.isPrime(10));
+	  assertFalse("Incorrect result", mathService.isPrime(15));
+	  assertFalse("Incorrect result", mathService.isPrime(150));
+	  
 	}
 
 }
