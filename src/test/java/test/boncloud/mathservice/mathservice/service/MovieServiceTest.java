@@ -57,5 +57,9 @@ public class MovieServiceTest {
 		assertNotNull("Result stream is null", resultStream2);
 		assertEquals("Incorrect result", result2, resultStream2);
 	}
+	
+	public void testIsPrime() {
+		
+	}
 
 }

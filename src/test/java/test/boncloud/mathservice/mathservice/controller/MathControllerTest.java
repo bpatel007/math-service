@@ -11,7 +11,6 @@ import java.util.Arrays;
 import java.util.List;
 
 import org.junit.Before;
-import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
@@ -28,7 +27,6 @@ import com.boncloud.mathservice.mathservice.service.MathService;
  *
  */
 @RunWith(SpringJUnit4ClassRunner.class)
-@Ignore
 public class MathControllerTest {
 
 	private MockMvc mockMvc;
