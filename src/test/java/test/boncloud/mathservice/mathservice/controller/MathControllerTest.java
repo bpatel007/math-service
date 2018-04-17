@@ -15,6 +15,7 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
+import org.springframework.http.MediaType;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
@@ -60,11 +61,13 @@ public class MathControllerTest {
 		mockMvc.perform(get("/primes/{maxNumber}", 10)).
 		andExpect(status().isOk()).
 		andExpect(status().is2xxSuccessful()).
+		andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8_VALUE)).
 		andExpect(content().string(response1));
 		
 		mockMvc.perform(get("/primes/{maxNumber}", 15)).
 		andExpect(status().isOk()).
 		andExpect(status().is2xxSuccessful()).
+		andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8_VALUE)).
 		andExpect(content().string(response2));
 		
 		verify(MathService, times(1)).findPrimeNumbers(10);
